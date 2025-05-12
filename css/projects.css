@@ -3,6 +3,7 @@
 	background-size: cover;
 	/* https://stackoverflow.com/a/19758117 */
 	min-height: 100%;
+	min-width: 100%;
 }
 
 .projects-header {
@@ -50,7 +51,7 @@
 	background-image: linear-gradient(45deg, var(--light-blue), var(--text-color));
 	border-radius: 20px;
 	width: 80vw;
-	height: 360px;
+	min-height: 360px;
 	justify-content: center;
 }
 
@@ -144,8 +145,7 @@ h1 {
 	.projects-item {
 		flex-direction: row;
 		width: 100vw;
-		min-height: auto;
-		height: 270px;
+		min-height: 270px;
 		border-radius: 0px;
 		align-items: normal;
 	}
@@ -170,8 +170,7 @@ h1 {
 	.projects-item {
 		flex-direction: row;
 		width: 80vw;
-		min-height: auto;
-		height: 360px;
+		min-height: 360px;
 		border-radius: 20px;
 		align-items: normal;
 	}
