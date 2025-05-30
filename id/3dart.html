@@ -4,8 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Robertus Eric 3D Art Projects</title>
-	<link rel="stylesheet" href="./css/styles.css">
-	<link rel="stylesheet" href="./css/projects.css">
+	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="../css/projects.css">
+	<script src="../js/changeLanguage.js" defer></script>
 </head>
 <body>
 	<div class="projects-page">
@@ -13,7 +14,7 @@
 			<h1>3D Art Projects</h1>
 			<div class="home-page-buttons">
 				<div class="home-page-buttons-row">
-					<a href="./index.html" class="home-page-button">Home</a>
+					<a href="../index.html" class="home-page-button">Home</a>
 					<a href="./projects.html" class="home-page-button">Projects</a>
 				</div>
 				<div class="home-page-buttons-row">
@@ -25,6 +26,13 @@
 			</div>
 			<div class="social-media-buttons">
 				<a href="https://sketchfab.com/StalemateZ/models"><svg viewBox="0 0 2000 2000" xmlns="http://www.w3.org/2000/svg" class="social-media-icon"><path d="m1000 69c-515.52 0-933.28 417.84-933.28 933.24s417.76 933.29 933.28 933.29 933.36-417.89 933.36-933.29-417.84-933.24-933.36-933.24z" fill="#fff"/><path d="m1000 0c-552.32 0-1000 447.72-1000 1000s447.68 1000 1000 1000 1000-447.72 1000-1000-447.6-1000-1000-1000zm-86.88 1595.07-431.12-248.86v-502l431.12 232.79zm76.8-636.19-510.08-270.38 510.08-294.5 510.16 294.5zm510.48 388.29-429.52 248v-516.17l429.52-232z"/></svg></a>
+			</div>
+			<div class="language-selector-container">
+				<h3 id="language-selector"></h3>
+				<div class="language-dropdown-content">
+					<button class="language-dropdown-button" onclick="changePage('English')">English</button>
+					<button class="language-dropdown-button" onclick="changePage('Indonesian')">Indonesian</button>
+				</div>
 			</div>
 		</div>
 		<div class="projects-content">

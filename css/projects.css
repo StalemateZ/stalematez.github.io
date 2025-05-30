@@ -19,6 +19,9 @@
 	align-items: center;
 	flex-direction: column;
 	color: var(--dark-purple);
+
+	z-index: 1;
+	position: relative;
 }
 
 .home-page-buttons {
@@ -113,6 +116,23 @@ h1 {
 	width: 32px;
 	object-fit: cover;
 	object-position: 0;
+}
+
+.language-selector-container {
+	align-self: auto;
+}
+
+#language-selector {
+	background-color: var(--dark-purple);
+	
+}
+
+.language-selector-container:hover #language-selector {
+	background-color: var(--light-blue);
+}
+
+.language-dropdown-button:hover {
+	background-color: var(--light-blue);
 }
 
 @media only screen and (max-width: 900px) {

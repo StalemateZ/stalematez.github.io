@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="./css/styles.css">
 	<link rel="stylesheet" href="./css/homepage.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<!-- https://stackoverflow.com/a/28364607 -->
+	<script src="./js/changeLanguage.js" defer></script>
 </head>
 <body>
 	<div class="home-page">
@@ -17,14 +19,14 @@
 			</div>
 			<div class="home-page-buttons">
 				<div class="home-page-buttons-row">
-					<a href="./index.html" class="home-page-button">Home</a>
-					<a href="./projects.html" class="home-page-button">Projects</a>
+					<a href="../index.html" class="home-page-button">Home</a>
+					<a href="./en/projects.html" class="home-page-button">Projects</a>
 				</div>
 				<div class="home-page-buttons-row">
-					<a href="./programming.html" class="home-page-button">Programming</a>
-					<a href="./2dart.html" class="home-page-button">2D Art</a>
-					<a href="./3dart.html" class="home-page-button">3D Art</a>
-					<a href="./gamedesign.html" class="home-page-button">Game Design</a>
+					<a href="./en/programming.html" class="home-page-button">Programming</a>
+					<a href="./en/2dart.html" class="home-page-button">2D Art</a>
+					<a href="./en/3dart.html" class="home-page-button">3D Art</a>
+					<a href="./en/gamedesign.html" class="home-page-button">Game Design</a>
 				</div>
 			</div>
 			<div class="social-media-buttons">
@@ -35,6 +37,13 @@
 				<a href="https://www.linkedin.com/in/robertus-eric-414860220/">
 					<img class="social-media-icon" src="./img/InBug-White.png" alt="LinkedIn Logo">
 				</a>
+			</div>
+			<div class="language-selector-container">
+				<h3 id="language-selector"></h3>
+				<div class="language-dropdown-content">
+					<button class="language-dropdown-button" onclick="changeLanguage('English')">English</button>
+					<button class="language-dropdown-button" onclick="changeLanguage('Indonesian')">Indonesian</button>
+				</div>
 			</div>
 		</div>
 	</div>

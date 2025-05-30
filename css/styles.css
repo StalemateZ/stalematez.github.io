@@ -26,6 +26,11 @@ h2 {
 	margin: 0;
 }
 
+h3 {
+	font-size: 1.5rem;
+	margin: 0;
+}
+
 /* https://stackoverflow.com/a/12638711 */
 @keyframes fadeIn {
   0% {
@@ -71,10 +76,73 @@ h2 {
 }
 
 .social-media-buttons {
-	margin: 10px 10px 0px 10px;
+	/* margin: 10px 10px 0px 10px; */
+	margin: 10px;
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
+}
+
+/* https://stackoverflow.com/a/16546388 */
+.language-selector-container {
+	position: relative;
+	align-self: flex-start;
+	margin: 0;
+	color: var(--text-color);
+	min-width: 160px;
+}
+
+#language-selector {
+	padding: 10px;
+	border-radius: 10px;
+	transition: background-color 0.25s, border-radius 0.1s;
+	min-height: 1.5rem;
+}
+
+/* https://stackoverflow.com/a/34623718 */
+#language-selector::after {
+	position: relative;
+	content: "";
+	width: 1rem;
+	height: 1rem;
+	border-right: 0.25rem solid var(--text-color);
+	border-top: 0.25rem solid var(--text-color);
+	transform: rotate(135deg);
+	margin-left: 1rem;
+	top: -0.25rem;
+	float: right;
+}
+
+.language-selector-container:hover #language-selector {
+	background-color: var(--transparent-offwhite);
+	border-radius: 10px 10px 0px 0px;
+}
+
+.language-dropdown-content {
+	display: none;
+	flex-direction: column;
+	position: absolute;
+	width: 100%;
+}
+
+.language-selector-container:hover .language-dropdown-content {
+	display: flex;
+}
+
+.language-dropdown-button {
+	font-size: 1.5rem;
+	background-color: var(--dark-purple);
+	border: 0;
+	border-top: 0.25rem solid var(--icon-color-dark);
+	padding: 10px;
+	color: var(--text-color);
+	/* https://stackoverflow.com/a/15147863 */
+	cursor: pointer;
+	transition: background-color 0.25s;
+}
+
+.language-dropdown-button:hover {
+	background-color: var(--transparent-offwhite);
 }
