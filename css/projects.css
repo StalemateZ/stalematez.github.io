@@ -135,6 +135,44 @@ h1 {
 	background-color: var(--light-blue);
 }
 
+#projects-move-to-top-button {
+	width: 100px;
+	height: 100px;
+	border-radius: 20px;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--dark-purple);
+	opacity: 50%;
+	transition: opacity 0.5s;
+	visibility: hidden;
+}
+
+#projects-move-to-top-button:hover {
+	opacity: 100%;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function/cubic-bezier#bouncing_effect */
+/* https://developer.mozilla.org/en-US/docs/Web/API/Element/animationend_event */
+#projects-move-to-top-button.popInAnimation {
+	animation: popIn 0.25s cubic-bezier(0.3, 0.8, 0.3, 2) 0s 1 normal;
+}
+
+#projects-move-to-top-button.popOutAnimation {
+	animation: popIn 0.25s cubic-bezier(0.3, 0.8, 0.3, 2) 0s 1 reverse;
+}
+
+/* https://stackoverflow.com/a/12638711 */
+@keyframes popIn {
+  0% {
+	transform: scale(0);
+  }
+  100% {
+	transform: scale(1);
+  }
+}
+
 @media only screen and (max-width: 900px) {
 	.projects-item {
 		flex-direction: column;
@@ -158,6 +196,12 @@ h1 {
 	.projects-info {
 		width: 90%;
 		text-align: center;
+	}
+
+	#projects-move-to-top-button {
+		transform: scale(0.5);
+		bottom: 5px;
+		right: 5px;
 	}
 }
 
@@ -184,6 +228,12 @@ h1 {
 		width: 42%;
 		text-align: left;
 	}
+
+	#projects-move-to-top-button {
+		transform: scale(0.75);
+		bottom: 10px;
+		right: 10px;
+	}
 }
 
 @media only screen and (min-width: 1200px) {
@@ -208,5 +258,11 @@ h1 {
 	.projects-info {
 		width: 42%;
 		text-align: left;
+	}
+
+	#projects-move-to-top-button {
+		transform: scale(1);
+		bottom: 15px;
+		right: 15px;
 	}
 }

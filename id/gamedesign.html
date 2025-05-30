@@ -7,11 +7,12 @@
 	<link rel="stylesheet" href="../css/styles.css">
 	<link rel="stylesheet" href="../css/projects.css">
 	<script src="../js/changeLanguage.js" defer></script>
+	<script src="../js/showScrollToTopButton.js" defer></script>
 </head>
 <body>
 	<div class="projects-page">
 		<div class="projects-header">
-			<h1>Game Design Projects</h1>
+			<h1 id="projects-header-text">Game Design Projects</h1>
 			<div class="home-page-buttons">
 				<div class="home-page-buttons-row">
 					<a href="../index.html" class="home-page-button">Home</a>
@@ -65,6 +66,9 @@
 				</div>
 			</div>
 		</div>
+		<a href="#projects-header-text" id="projects-move-to-top-button">
+			<div class="triangle-up"></div>
+		</a>
 	</div>
 </body>
 </html>
