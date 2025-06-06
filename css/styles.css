@@ -5,6 +5,7 @@
 	--dark-purple: #126f18;
 	--light-blue: #afdd6c;
 	--transparent-offwhite: #dfffd080;
+	--glow: #cef29a;
 }
 
 * {
@@ -16,6 +17,7 @@ html, body {
 	height: 100%;
 	scroll-behavior: smooth;
 	font-size: 12px;
+	overflow: visible;
 }
 
 h1 {
