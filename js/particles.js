@@ -137,11 +137,12 @@ ParticleMovement.prototype.main = function(){
 
 ParticleMovement.prototype.fade = function() {
 	if(this.lifespan > this.fadeOutValue) {
-		const distanceFromMaxLifespan = this.maxLifespan - this.lifespan;
-		this.particle.style.opacity = distanceFromMaxLifespan * (this.fadeOutValue/this.lifespan)/100;
+		const value = (this.maxLifespan - this.lifespan)/(this.maxLifespan - this.fadeOutValue)
+		this.particle.style.opacity = value;
 	}
 	else if(this.lifespan < this.fadeInValue) {
-		this.particle.style.opacity = this.lifespan / this.fadeInValue;
+		const value = this.lifespan / this.fadeInValue;
+		this.particle.style.opacity = value;
 	}
 }
 
