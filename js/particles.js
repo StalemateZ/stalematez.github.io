@@ -10,7 +10,7 @@ const glowSizeOffset = 3;
 const maxLifespanRange = { min: 500, max: 1500};
 const speedRange = { min: 1, max: 2};
 const moveInOneDirectionRange = { min: 1, max: 25};
-const fadePercentage = 0.1;
+const fadePercentage = 0.25;
 
 let currentParticles = 0;
 const spawnDelayRange = { min: 25, max: 125};
@@ -139,10 +139,12 @@ ParticleMovement.prototype.fade = function() {
 	if(this.lifespan > this.fadeOutValue) {
 		const value = (this.maxLifespan - this.lifespan)/(this.maxLifespan - this.fadeOutValue)
 		this.particle.style.opacity = value;
+		this.particle.style.transform = `scale(${value})`;
 	}
 	else if(this.lifespan < this.fadeInValue) {
 		const value = this.lifespan / this.fadeInValue;
 		this.particle.style.opacity = value;
+		this.particle.style.transform = `scale(${value})`;
 	}
 }
 
