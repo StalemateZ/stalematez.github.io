@@ -145,7 +145,9 @@ ParticleMovement.prototype.fade = function() {
 	}
 }
 
-spawnParticles();
+if (window.innerWidth > 650) {
+	spawnParticles();
+}
 
 function spawnParticles(){
 	// for (const particle of particles
