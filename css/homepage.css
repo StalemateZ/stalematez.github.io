@@ -1,3 +1,8 @@
+:root {
+	--home-page-box-width: 700px;
+	--home-page-box-height: 350px;
+}
+
 body {
 	overflow: hidden;
 }
@@ -17,14 +22,14 @@ body {
 }
 
 .home-page-box {
-	animation: 0.5s ease-out 0.1s 1 fadeIn;
+	animation: var(--transition-duration-2) ease-out 0.1s 1 fadeIn;
 	animation-fill-mode: both;
 
 	background-image: linear-gradient(45deg, var(--dark-purple), var(--light-blue));
-	border-radius: 35px;
-	width: 700px;
-	height: 350px;
-	padding: 30px;
+	border-radius: var(--border-radius-2);
+	width: var(--home-page-box-width);
+	height: var(--home-page-box-height);
+	padding: var(--padding);
 	margin: auto;
 	text-align: center;
 
@@ -43,29 +48,22 @@ body {
 
 .material-icons.social-media {
 	color: var(--icon-color-light);
-	font-size: 36px;
+	font-size: var(--font-size-1);
 }
 
 .social-media-icon {
 	color: var(--icon-color-light);
 	fill: var(--icon-color-light);
-	height: 32px;
-	width: 32px;
+	height: var(--social-media-icon-size);
+	width: var(--social-media-icon-size);
 	object-fit: cover;
 	object-position: 0;
 }
 
 .particle {
-	width: 5px;
-	height: 5px;
 	background-color: var(--icon-color-light);
 	border-radius: 100%;
 	position: absolute;
-	box-shadow: 0px 0px 5px 5px var(--glow);
-	top: 6%;
-	left: 50%;
-
-	transition: top 0.5s, left 0.5s;
 }
 
 @media only screen and (max-width: 650px) {
@@ -77,11 +75,12 @@ body {
 
 	.home-page-buttons-row {
 		flex-direction: column;
-		gap: 10px;
+		gap: var(--margin);
 		width: 100%;
 	}
 	
 	.home-page-buttons {
 		width: 100%;
+		gap: var(--margin);
 	}
 }

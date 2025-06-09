@@ -6,6 +6,31 @@
 	--light-blue: #afdd6c;
 	--transparent-offwhite: #dfffd080;
 	--glow: #cef29a;
+
+	--default-font-size: 12px;
+	--font-size-1: 3rem;
+	--font-size-2: 2rem;
+	--font-size-3: 1.5rem;
+	--font-size-4: 1.25rem;
+	--font-size-5: 0.8rem;
+
+	--margin: 10px;
+	--margin-text: 20px;
+	--padding: 20px;
+	--border-radius: 10px;
+	--border-radius-2: 20px;
+
+	--social-media-icon-size: 32px;
+
+	--language-selector-min-width: 160px;
+	--language-selector-min-height: 1.5rem;
+
+	--triangle-up-sides: 25px;
+	--triangle-up-bottom: 50px;
+
+	--fade-in-translate-y: -20px;
+	--transition-duration: 0.25s;
+	--transition-duration-2: 0.5s;
 }
 
 * {
@@ -16,22 +41,22 @@ html, body {
 	margin: 0;
 	height: 100%;
 	scroll-behavior: smooth;
-	font-size: 12px;
+	font-size: var(--default-font-size);
 	overflow: visible;
 }
 
 h1 {
-	font-size: 3rem;
+	font-size: var(--font-size-1);
 	margin: 0;
 }
 
 h2 {
-	font-size: 2rem;
+	font-size: var(--font-size-2);
 	margin: 0;
 }
 
 h3 {
-	font-size: 1.5rem;
+	font-size: var(--font-size-3);
 	margin: 0;
 }
 
@@ -39,7 +64,7 @@ h3 {
 @keyframes fadeIn {
   0% {
     opacity: 0%;
-	transform: translateY(-20px);
+	transform: translateY(var(--fade-in-translate-y));
   }
   100% {
     opacity: 100%;
@@ -49,25 +74,24 @@ h3 {
 
 .home-page-buttons-row {
 	display: flex;
-	margin: 5px;
 }
 
 .home-page-buttons {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 10px;
+	margin: var(--margin);
 }
 
 .home-page-button {
 	background-color: var(--text-color);
-	border-radius: 10px;
+	border-radius: var(--border-radius);
 	color: var(--dark-purple);
 	font-weight: bold;
-	padding: 20px;
-	margin: 0px 10px;
-	font-size: 1.25rem;
-	transition: background-color 0.25s;
+	padding: var(--padding);
+	margin: var(--margin);
+	font-size: var(--font-size-4);
+	transition: background-color var(--transition-duration);
 	text-decoration: none;
 }
 
@@ -81,12 +105,12 @@ h3 {
 
 .social-media-buttons {
 	/* margin: 10px 10px 0px 10px; */
-	margin: 10px;
+	margin: var(--margin);
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 10px;
+	gap: var(--margin);
 }
 
 /* https://stackoverflow.com/a/16546388 */
@@ -95,14 +119,14 @@ h3 {
 	align-self: flex-start;
 	margin: 0;
 	color: var(--text-color);
-	min-width: 160px;
+	min-width: var(--language-selector-min-width);
 }
 
 #language-selector {
-	padding: 10px;
-	border-radius: 10px;
-	transition: background-color 0.25s, border-radius 0.1s;
-	min-height: 1.5rem;
+	padding: var(--padding);
+	border-radius: var(--border-radius);
+	transition: background-color var(--transition-duration), border-radius var(--transition-duration);
+	min-height: var(--language-selector-min-height);
 }
 
 /* https://stackoverflow.com/a/34623718 */
@@ -136,15 +160,15 @@ h3 {
 }
 
 .language-dropdown-button {
-	font-size: 1.5rem;
+	font-size: var(--font-size-3);
 	background-color: var(--dark-purple);
 	border: 0;
 	border-top: 0.25rem solid var(--icon-color-dark);
-	padding: 10px;
+	padding: var(--padding);
 	color: var(--text-color);
 	/* https://stackoverflow.com/a/15147863 */
 	cursor: pointer;
-	transition: background-color 0.25s;
+	transition: background-color var(--transition-duration);
 }
 
 .language-dropdown-button:hover {
@@ -155,7 +179,7 @@ h3 {
 .triangle-up {
 	width: 0px;
 	height: 0px;
-	border-left: 25px solid transparent;
-  	border-right: 25px solid transparent;
-	border-bottom: 50px solid var(--text-color);
+	border-left: var(--triangle-up-sides) solid transparent;
+  	border-right: var(--triangle-up-sides) solid transparent;
+	border-bottom: var(--triangle-up-bottom) solid var(--text-color);
 }
