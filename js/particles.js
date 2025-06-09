@@ -9,7 +9,8 @@ const glowSizeOffset = 3;
 
 const maxLifespanRange = { min: 500, max: 1500};
 const speedRange = { min: 1, max: 2};
-const moveInOneDirectionRange = { min: 1, max: 25};
+const transitionMultiplier = 1;
+const moveInOneDirectionRange = { min: 5, max: 6};
 const fadePercentage = 0.25;
 
 let currentParticles = 0;
@@ -61,22 +62,44 @@ ParticleMovement.prototype.moveRandomly = function(){
 	// 1 -> move down
 	// 2 -> stay
 
-
 	let topValue = parseFloat(this.particle.style.top);
 	let leftValue = parseFloat(this.particle.style.left);
+	let topTransitionValue = transitionMultiplier;
+	let leftTransitionValue = transitionMultiplier;
+	// console.log(`${topTransitionValue}s, ${leftTransitionValue}s`);
+
+	if (this.particle.style.transition) {
+		// https://stackoverflow.com/a/4572205
+		const transitions = this.particle.style.transition.replace(/[^0-9.,]/g, '').split(',');
+		// console.log(transitions)
+		let topTransitionValue = parseFloat(transitions[0]);
+		let leftTransitionValue = parseFloat(transitions[1]);
+		// console.log(`Has transition. source: ${this.particle.style.transition}, transitions: ${transitions}, top: ${topTransitionValue}, left: ${leftTransitionValue}`)
+		if (isNaN(topTransitionValue)) topTransitionValue = transitionMultiplier;
+		if (isNaN(leftTransitionValue)) leftTransitionValue = transitionMultiplier;
+	}
 
 	switch (selection) {
 		case 0:
 			topValue -= speed;
+			topTransitionValue = speed * transitionMultiplier;
+			// console.log(`top 0 --> ${topTransitionValue}s, ${leftTransitionValue}s`);
+			this.particle.style.transition = `top ${topTransitionValue}s, left ${leftTransitionValue}s`;
 			this.particle.style.top = topValue + "px";
 			// console.log(`UP with value ${speed} and current pos ${this.particle.style.top}`);
 			break;
 		case 1:
 			topValue += speed;
+			topTransitionValue = speed * transitionMultiplier;
+			// console.log(`top 1 --> ${topTransitionValue}s, ${leftTransitionValue}s`);
+			this.particle.style.transition = `top ${topTransitionValue}s, left ${leftTransitionValue}s`;
 			this.particle.style.top = topValue + "px";
 			// console.log(`DOWN with value ${speed} and current pos ${this.particle.style.top}`);
 			break;
 		default:
+			topTransitionValue = transitionMultiplier;
+			// console.log(`top default --> ${topTransitionValue}s, ${leftTransitionValue}s`);
+			this.particle.style.transition = `top ${topTransitionValue}s, left ${leftTransitionValue}s`;
 			break;
 	}
 
@@ -101,20 +124,35 @@ ParticleMovement.prototype.moveRandomly = function(){
 	topValue = parseFloat(this.particle.style.top);
 	leftValue = parseFloat(this.particle.style.left);
 
+	// if (this.previousDirection1 > 1) {
+	// 	selection = Math.floor(Math.random() * 2);
+	// }
+
 	switch (selection) {
 		case 0:
 			leftValue -= speed;
+			leftTransitionValue = speed * transitionMultiplier;
+			// console.log(`left 0 --> ${topTransitionValue}s, ${leftTransitionValue}s`);
+			this.particle.style.transition = `top ${topTransitionValue}s, left ${leftTransitionValue}s`;
 			this.particle.style.left = leftValue + "px";
 			// console.log(`LEFT with value ${speed} and current pos ${this.particle.style.top}`);
 			break;
 		case 1:
 			leftValue += speed;
+			leftTransitionValue = speed * transitionMultiplier;
+			// console.log(`left 1 --> ${topTransitionValue}s, ${leftTransitionValue}s`);
+			this.particle.style.transition = `top ${topTransitionValue}s, left ${leftTransitionValue}s`;
 			this.particle.style.left = leftValue + "px";
 			// console.log(`RIGHT with value ${speed} and current pos ${this.particle.style.top}`);
 			break;
 		default:
+			leftTransitionValue = transitionMultiplier;
+			// console.log(`left default --> ${topTransitionValue}s, ${leftTransitionValue}s`);
+			this.particle.style.transition = `top ${topTransitionValue}s, left ${leftTransitionValue}s`;
 			break;
 	}
+
+	// console.log(this.particle.style.transition);
 
 	this.movementRange2++;
 
