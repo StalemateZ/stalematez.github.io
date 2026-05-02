@@ -296,6 +296,10 @@ h1 {
 		text-align: center;
 	}
 
+	.social-media-buttons {
+		flex-direction: column;
+	}
+
 	#projects-move-to-top-button {
 		transform: scale(0.5);
 		bottom: var(--projects-move-to-top-button-position-3);
